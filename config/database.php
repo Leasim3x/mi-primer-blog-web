@@ -15,7 +15,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    /* Credenciales de acceso -> archivo ".env"*/
+    'default' => env('DB_CONNECTION','mysql'),
 
     /*
     |--------------------------------------------------------------------------

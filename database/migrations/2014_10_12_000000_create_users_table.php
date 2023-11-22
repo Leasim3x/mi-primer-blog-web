@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->id();// Integer Unsigned Increment
+            $table->string('name');// varchar
+            $table->string('email')->unique();// Evita repetir el dato
+            $table->timestamp('email_verified_at')->nullable();// Cuando se le pase un campo que debe de quedar vacio, se debe de aplicar la propiedad "nullable()"
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
@@ -25,7 +25,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down(): void// Elimina la tabla users
     {
         Schema::dropIfExists('users');
     }
