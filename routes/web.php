@@ -8,6 +8,7 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,4 +55,10 @@ Route::controller(CommentController::class)->group(function(){
     Route::get('commnets/create','create');
 
     Route::get('comments/{post}','show');
+});
+
+Route::controller(UsersController::class)->group(function(){
+    Route::get('users/create','create');
+
+    Route::get('users/{show}','show');
 });
