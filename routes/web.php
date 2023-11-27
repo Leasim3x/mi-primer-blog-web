@@ -68,7 +68,9 @@ Route::controller(CommentController::class)->group(function(){
 });
 
 Route::controller(UsersController::class)->group(function(){
-    Route::get('users/create','create');
+    Route::view('crear-usuario', 'users.create');
+
+    Route::post('crear-usuario',[UsersController::class,'create']);
 
     Route::get('users/{show}','show');
 });

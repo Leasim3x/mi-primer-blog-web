@@ -24,8 +24,8 @@ class UserFactory extends Factory
     {
         return [
             // Campos a definir
-            'name' => $this->faker->name,
-            'last_name' => $this->faker->name,
+            'name' => $this->faker->firstName,           
+            'last_name' => $this->faker->lastName,
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'avatar' => $this->faker->sentence(),
