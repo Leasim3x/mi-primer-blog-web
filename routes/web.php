@@ -10,6 +10,9 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UsersController;
 
+use App\Http\Resources\PostCollection;
+use App\Models\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +49,13 @@ Route::controller(CategoryController::class)->group(function () {
 
 // sitio para las publicaciones
 Route::controller(PostController::class)->group(function(){
+    /**Route::get('/posts', function () {
+        return new PostCollection(Post::paginate(15));
+        
+    });**/
+
+    Route::get('posts', 'index');
+
     Route::get('posts/create','create');
 
     Route::get('posts/{post}','show');

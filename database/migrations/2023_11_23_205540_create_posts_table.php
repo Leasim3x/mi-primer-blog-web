@@ -21,7 +21,8 @@ return new class extends Migration
             $table->foreign('id_category')
             ->references('id')
             ->on('categories');
-            $table->text('content');
+            $table->string('title',100);
+            $table->text('content',255);
             $table->timestamps();
         });
     }
